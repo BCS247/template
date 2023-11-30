@@ -260,3 +260,27 @@
   new PureCounter();
 
 })()
+
+window.addEventListener('scroll', function() {
+    var logo = document.getElementById('animated-logo');
+    var sections = ['hero', 'about', 'services']; // Add more section IDs as needed
+    var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    for (var i = 0; i < sections.length; i++) {
+        var section = document.getElementById(sections[i]);
+        var position = section.offsetTop;
+        var height = section.offsetHeight;
+
+        if (currentPosition >= position && currentPosition < position + height) {
+            if (i % 2 === 0) {
+                logo.style.left = '20px'; // Left side for even sections
+            } else {
+                logo.style.left = 'calc(100% - 340px)'; // Right side for odd sections, '60px' is the width of the logo
+            }
+            break;
+        }
+    }
+});
+
+
+
