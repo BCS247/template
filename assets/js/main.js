@@ -261,9 +261,10 @@
 
 })()
 
-window.addEventListener('scroll', function() {
+
+  window.addEventListener('scroll', function() {
     var logo = document.getElementById('animated-logo');
-    var sections = ['hero', 'about', 'services']; // Add more section IDs as needed
+    var sections = ['hero', 'about', 'services', 'counts', 'portfolio', 'testimonials', 'team', 'contact'];
     var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
 
     for (var i = 0; i < sections.length; i++) {
@@ -273,14 +274,16 @@ window.addEventListener('scroll', function() {
 
         if (currentPosition >= position && currentPosition < position + height) {
             if (i % 2 === 0) {
-                logo.style.left = '20px'; // Left side for even sections
+                logo.style.left = '5%'; // Logo on the left for even sections
             } else {
-                logo.style.left = 'calc(100% - 340px)'; // Right side for odd sections, '60px' is the width of the logo
+                logo.style.left = 'calc(100% - 15%)'; // Logo on the right for odd sections
             }
             break;
         }
     }
-});
+  });
+
+
 
 
 
